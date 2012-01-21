@@ -1,9 +1,13 @@
 class OffersController < ApplicationController
-  def index
-    search_params = params.slice(:user_id, :custom, :page).merge(sample_data)
+  rescue_from ArgumentError, :with => :invalid_parameter
 
-    @search = OfferSearch.new(search_params)
-  	@offers = paginated_search_results(@search)
+  def index
+    if params[:submit]
+      search_params = params.slice(:user_id, :custom, :page).merge(sample_data)
+
+      @search = OfferSearch.new(search_params)
+  	  @offers = paginated_search_results(@search)
+    end
   end
 
   private
@@ -21,4 +25,9 @@ class OffersController < ApplicationController
       pager.replace search.offers[pager.offset, pager.per_page].to_a
     end
   end
+
+  def invalid_parameter(exception)
+    render :text => "Error: #{exception.message}", :status => :bad_request
+  end
+
 end
