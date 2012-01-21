@@ -25,7 +25,7 @@ module SponsorPay
 
     def validate!
       REQUIRED_PARAMETERS.each do |param_name|
-        raise ArgumentError, "#{param_name.to_s.camelize} not specified" if parameters(param_name).nil?
+        raise ArgumentError, "#{param_name.to_s.camelize} not specified" if parameters(param_name).blank?
       end
     end
 
