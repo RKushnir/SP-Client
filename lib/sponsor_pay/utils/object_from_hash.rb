@@ -11,6 +11,7 @@ module SponsorPay
             def #{key}
               @#{key} ||= case self[:#{key}]
               when Hash then ObjectFromHash.new(self[:#{key}])
+              when Array then self[:#{key}].map {|v| ObjectFromHash.new(v)}
               else self[:#{key}]
               end
             end
