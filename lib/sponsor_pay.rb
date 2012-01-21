@@ -20,6 +20,9 @@ module SponsorPay
   # The SponsorPay application ID for your application
   mattr_accessor :application_id
 
+  # Locale used for the offer descriptions
+  mattr_accessor :locale
+
   def self.setup
     yield(self)
   end
