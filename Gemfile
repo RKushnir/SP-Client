@@ -3,12 +3,21 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.0'
 
 gem 'haml-rails'
+gem 'will_paginate', '~> 3.0'
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda'
   gem 'fabrication'
 end
+
+group :assets do
+  gem 'sass-rails',   "~> 3.2.0"
+  gem 'coffee-rails', "~> 3.2.0"
+  gem 'uglifier'
+end
+
+gem 'therubyracer'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
