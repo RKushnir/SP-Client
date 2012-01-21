@@ -17,7 +17,7 @@ class OffersController < ApplicationController
   end
 
   def paginated_search_results(search)
-    WillPaginate::Collection.create(1, 20, search.count) do |pager|
+    WillPaginate::Collection.create(params[:page] || 1, 20, search.count) do |pager|
       pager.replace search.offers[pager.offset, pager.per_page].to_a
     end
   end
