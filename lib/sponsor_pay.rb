@@ -1,6 +1,7 @@
 module SponsorPay
   autoload :Request, 'sponsor_pay/request'
   autoload :Query, 'sponsor_pay/query'
+  autoload :Utils, 'sponsor_pay/utils'
 
   # Secret key you received from SponsorPay
   mattr_accessor :api_key
