@@ -1,5 +1,6 @@
 module SponsorPay
   autoload :Request, 'sponsor_pay/request'
+  autoload :Response, 'sponsor_pay/response'
   autoload :Query, 'sponsor_pay/query'
   autoload :Utils, 'sponsor_pay/utils'
 

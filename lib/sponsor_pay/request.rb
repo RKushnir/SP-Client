@@ -10,10 +10,10 @@ module SponsorPay
     end
 
     def response
-      @response ||= Net::HTTP.get_response(uri)
+      @response ||= Response.new(Net::HTTP.get_response(uri))
     end
 
-    # private
+    private
 
     def default_parameters
       {
