@@ -53,7 +53,7 @@ module SponsorPay
         locale: parameters(:locale),
         page: parameters(:page),
         device_id: parameters(:device_id),
-        ps_time: parameters(:registered_at).to_i,
+        ps_time: parameters(:registered_at) && parameters(:registered_at).to_i,
         offer_types: parameters(:offer_types),
         android_id: parameters(:android_id),
       }
