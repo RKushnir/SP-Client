@@ -1,0 +1,23 @@
+%h1 Offers
+
+= form_tag offers_path, :method => :get do
+  .input
+    = label_tag :user_id, 'User ID'
+    = text_field_tag :user_id
+  .input
+    = label_tag :'custom[]', 'pub0'
+    = text_field_tag :'custom[]'
+  .actions
+    = submit_tag 'Search', :name => nil
+
+- if @search.successful?
+  - if @offers.any?
+    = will_paginate @offers
+    .offers
+      = render :partial => 'offer', :collection => @offers
+    = will_paginate @offers
+  - else
+    .no_offers
+      No offers
+- else
+  = @search.message
