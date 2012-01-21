@@ -12,6 +12,10 @@ module SponsorPay
       validate!
     end
 
+    def successful?
+      code == "OK"
+    end
+
     private
 
     def parser
