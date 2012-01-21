@@ -32,4 +32,7 @@ module SponsorPay
     yield(self)
   end
 
+  class UnsupportedFormatError < StandardError
+  end
+
 end

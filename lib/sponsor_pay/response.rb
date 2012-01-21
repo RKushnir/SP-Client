@@ -5,13 +5,20 @@ module SponsorPay
     extend Forwardable
     def_delegators :@data, :code, :message, :count, :pages, :information, :offers
 
-    def initialize(response)
+    def initialize(response, format)
       @response = response
-      @data = Utils::ObjectFromHash.new(JSON.parse(@response.body))
+      @format = format
+      @data = Utils::ObjectFromHash.new(parser.parse(@response.body))
       validate!
     end
 
     private
+
+    def parser
+      Utils.const_get("#{@format.to_s.camelize}Parser")
+    rescue NameError
+      raise UnsupportedFormatError
+    end
 
     def validate!
       return if hash_key == @response['x-sponsorpay-response-signature']
