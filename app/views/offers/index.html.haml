@@ -14,7 +14,7 @@
   - if @search.successful?
     - if @offers.any?
       = will_paginate @offers
-      .offers
+      %ol.offers
         = render :partial => 'offer', :collection => @offers
       = will_paginate @offers
     - else

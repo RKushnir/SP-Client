@@ -6,20 +6,19 @@
 .offers {
   margin-top: 20px;
 }
+.offers li {
+  border-bottom: 1px solid #999999;
+  margin-bottom: 20px;
+}
 .offer {
   overflow: auto;
-  border-bottom: 1px solid #333333;
-  margin-bottom: 20px;
-  padding-left: 20px;
+}
+.offer .title, .offer .payout, .offer .thumbnail {
+  display: inline;
 }
 .offer .title {
-  display: inline;
   margin-left: 10px;
-}
-.offer .payout{
-  display: inline;
 }
 .offer .thumbnail{
   float: left;
-  display: inline;
 }
