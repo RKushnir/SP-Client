@@ -7,7 +7,7 @@ module SponsorPay
 
   # Address of the API host
   mattr_accessor :host
-  @@host = "http://api.sponsorpay.com"
+  @@host = "api.sponsorpay.com"
 
   # Relative path for this version of API
   mattr_accessor :path
