@@ -56,7 +56,7 @@ describe SponsorPay::Request do
   end
 
   it "should get a response" do
-    subject.response.should_not be_nil
+    subject.response.code.should == "OK"
   end
 
   def valid_attributes
