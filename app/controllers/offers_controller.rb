@@ -1,5 +1,6 @@
 class OffersController < ApplicationController
   rescue_from ArgumentError, :with => :invalid_parameter
+  rescue_from SecurityError, :with => :invalid_response_from_service
 
   def index
     if params[:submit]
@@ -28,6 +29,10 @@ class OffersController < ApplicationController
 
   def invalid_parameter(exception)
     render :text => "Error: #{exception.message}", :status => :bad_request
+  end
+
+  def invalid_response_from_service(exception)
+    render :text => "Error: #{exception.message}", :status => :internal_server_error
   end
 
 end

@@ -11,6 +11,10 @@ describe OffersController do
     it "returns bad request when submitted with invalid parameters" do
       get 'index', :submit => true, :user_id => ''
       response.should be_bad_request
+    it "returns internal server error when response's signature validation fails" do
+      SponsorPay::Response.any_instance.stub(:hash_key => 'invalid hash key')
+      get 'index', :submit => 'submit', :user_id => 'qwerty', :custom => ['asdfgh']
+      should respond_with(:internal_server_error)
     end
 
     it "assigns offers" do
