@@ -41,7 +41,6 @@ GEM
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
-    fabrication (1.2.0)
     haml (3.1.4)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -126,7 +125,6 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.0)
-  fabrication
   haml-rails
   rails (= 3.2.0)
   rspec-rails

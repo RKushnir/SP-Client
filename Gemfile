@@ -8,7 +8,6 @@ gem 'will_paginate', '~> 3.0'
 group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda'
-  gem 'fabrication'
 end
 
 group :assets do
