@@ -1,4 +1,4 @@
 == SP Client
 
-SP Client is a sample Rails-application to demonstrate SponsorPay API usage.
+SP Client is a sample Rails-application to demonstrate Fyber(ex-SponsorPay) API usage.
 
